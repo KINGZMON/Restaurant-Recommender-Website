@@ -1807,3 +1807,43 @@ form .fa-magnifying--location{
  padding: 10px 20px;
  color: #0B7E2D;
 }
+
+
+/*--------------Search-Box--------------*/
+.container{
+  width: 100%;
+  height: 20vh;
+  background: #060606;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  background-color: #fff;
+  width: 1000px;
+  height: 55px;
+  display: flex;
+}
+
+form input{
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+form button{
+  background: #0B7E2D;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+form .fa-location-pin{
+ align-self: center;
+ padding: 10px 20px;
+ color: #0B7E2D;
+}
