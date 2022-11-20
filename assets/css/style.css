@@ -1,5 +1,5 @@
 /*--------------Search-Box--------------*/
-.container{
+.container1{
   width: 100%;
   height: 10vh;
   display: flex;
@@ -41,4 +41,27 @@ form .fa-location-pin{
  color: #0B7E2D;
 }
 
+
+/*------Filter section------*/
+#main {
+  margin-top: 10px;
+  min-height: 300px;
+}
+
+#sidebar {
+  width: 150px;
+  float: left;
+  background-color: #fff;
+  min-height: 250px;
+  border: 1px solid#0B7E2D;
+}
+
+#sidebar h4{
+  font-size: 20px;
+}
+
+#Second{
+background-color: #fff;
+min-height: 600px;
+}
 
