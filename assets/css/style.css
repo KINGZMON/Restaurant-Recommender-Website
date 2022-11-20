@@ -24,14 +24,13 @@ form input{
 }
 
 form button{
-  background-color: #fff;
+  background-color: #0B7E2D;
   padding: 10px 50px;
   border: none;
   outline: none;
   color: #fff;
   letter-spacing: 1px;
   cursor: pointer;
-  color: #0B7E2D;
 }
 
 form .fa-location-pin{
@@ -39,4 +38,5 @@ form .fa-location-pin{
  padding: 10px 20px;
  color: #0B7E2D;
 }
+
 
