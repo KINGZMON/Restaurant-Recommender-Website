@@ -12,7 +12,7 @@ form{
   width: 700px;
   height: 55px;
   display: flex;
-  box-shadow: grey;
+  box-shadow: 10px 10px 5px lightgray;
   border: 1px solid#0B7E2D;
 
 }
