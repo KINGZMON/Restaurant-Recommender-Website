@@ -1,13 +1,10 @@
 /*--------------Search-Box--------------*/
 .container{
-  padding-top: 50px;
   width: 100%;
-  height: 20vh;
-  background: #fff;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 10px 10px 5px lightslategray;
 }
 
 form{
@@ -15,6 +12,9 @@ form{
   width: 700px;
   height: 55px;
   display: flex;
+  box-shadow: grey;
+  border: 1px solid#0B7E2D;
+
 }
 
 form input{
@@ -24,13 +24,14 @@ form input{
 }
 
 form button{
-  background: #0B7E2D;
+  background-color: #fff;
   padding: 10px 50px;
   border: none;
   outline: none;
   color: #fff;
   letter-spacing: 1px;
   cursor: pointer;
+  color: #0B7E2D;
 }
 
 form .fa-location-pin{
