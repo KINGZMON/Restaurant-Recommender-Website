@@ -1,57 +1,18 @@
 /*--------------Search-Box--------------*/
 .container{
-  width: 100%;
-  height: 20vh;
-  background: #060606;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-form{
-  background-color: #fff;
-  width: 600px;
-  height: 55px;
-  display: flex;
-}
-
-form input{
-  flex: 1;
-  border: none;
-  outline: none;
-}
-
-form button{
-  background: #0B7E2D;
-  padding: 10px 50px;
-  border: none;
-  outline: none;
-  color: #fff;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-form .fa-magnifying--location{
- align-self: center;
- padding: 10px 20px;
- color: #0B7E2D;
-}
-
-
-/*--------------Search-Box--------------*/
-.container{
+  padding-top: 50px;
   width: 100%;
   height: 20vh;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 10px 10px 5px lightblue;
+  box-shadow: 10px 10px 5px lightslategray;
 }
 
 form{
   background-color: #fff;
-  width: 1000px;
+  width: 700px;
   height: 55px;
   display: flex;
 }
