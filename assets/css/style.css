@@ -31,6 +31,8 @@ form button{
   color: #fff;
   letter-spacing: 1px;
   cursor: pointer;
+  border: 2px solid #fff; /* Green */
+  transition-duration: 0.4s;
 }
 
 form .fa-location-pin{
