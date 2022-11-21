@@ -1,14 +1,13 @@
-body, html {
-    height: 100%;
-    background:  #79b93ec9;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    margin: 0;
-    padding: 0;
-    font-family: arial;
+html{
+    height:100%;   
+}
+
+#login-section{
+    background-color:#79b93ec9;
+    height:600px;
 }
 .logInPanel{
-    position: absolute;
+    position: relative;
     background-color: white;
     top: 50%;
     left: 50%;
@@ -21,12 +20,12 @@ body, html {
 }
 .logo{
     position: absolute;
-    margin-top: 200px;
+    margin-top:30px;
     margin-left: 60px;
     width: 300px;
 }
 .logInPanel form{
-    padding: 100% 40px;
+    padding: 130px 100px;
     box-sizing: border-box;
 }
 form .textField{

@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LoginAssets/style.css"/>
+    <link rel="stylesheet" href="assets/css/login-styles.css"/>
     <title></title>
+
+    <script> 
+        $(function(){
+          $("#header").load("headfooter/header.html"); 
+          $("#footer").load("headfooter/footer.html"); 
+          
+        });
+    </script>
+
 </head>
 <body>
-    <div class="logInPanel">
-        <img src="./LoginAssets/img/logo.png" class="logo">
 
-        <form method="post">
-            <div class="textField">
-                <input type="text" required>
-                <span></span>
-                <label>Username</label>
-            </div>
-            <div class="textField">
-                <input type="password" required>
-                <span></span>
-                <label>Password</label>
-            </div>
-            <input type="submit" value="Login">
+    <!--Header-->
+    <div id="header"></div>
 
-        </form>
-
+    <div id="login-section">
+        <div class="logInPanel">
+            <a href="index.html"><img src="./assets/img/logo-main.png" class="logo"></a>
+    
+            <form method="post">
+                <div class="textField">
+                    <input type="text" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="textField">
+                    <input type="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <input type="submit" value="Login">
+    
+            </form>
+    
+        </div>
     </div>
+    
+
+    <!--Header-->
+    <div id="footer"></div>
     
 </body>
 </html>
