@@ -25,7 +25,7 @@ html{
     width: 300px;
 }
 .logInPanel form{
-    padding: 130px 100px;
+    padding: 100px 100px;
     box-sizing: border-box;
 }
 form .textField{
