@@ -3,7 +3,7 @@ html{
 }
 
 #login-section{
-    background-color:#79b93ec9;
+    background-color:#0B7E2D;
     height:600px;
 }
 .logInPanel{
@@ -25,7 +25,7 @@ html{
     width: 300px;
 }
 .logInPanel form{
-    padding: 130px 100px;
+    padding: 100px 100px;
     box-sizing: border-box;
 }
 form .textField{
@@ -61,7 +61,7 @@ form .textField{
     left: 0;
     width: 0%;
     height: 2px;
-    background: #56b63d;
+    background: #0B7E2D;
     transition: .5s;
 
 }
@@ -78,7 +78,7 @@ input[type="submit"]{
     width: 100%;
     height: 50px;
     border: 2px solid;
-    background: #57bb3e;
+    background: #0B7E2D;
     border-radius: 25px;
     font-size: 18px;
     color: white;
@@ -88,7 +88,7 @@ input[type="submit"]{
 
 }
 input[type="submit"]:hover{
-    border-color: #2691d9;
+    border-color: #fff;
     background-color: #40862e;
     transition: 0.5s;
 }
