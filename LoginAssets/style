@@ -1,0 +1,95 @@
+body, html {
+    height: 100%;
+    background:  #79b93ec9;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+.logInPanel{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    border-radius: 13px;
+    box-shadow: 2px -1px 41px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 2px -1px 41px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px -1px 41px -1px rgba(0,0,0,0.75);
+}
+.logo{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 60px;
+    width: 300px;
+}
+.logInPanel form{
+    padding: 100% 40px;
+    box-sizing: border-box;
+}
+form .textField{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.textField input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline:none
+
+}
+.textField label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+ 
+}
+.textField span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #56b63d;
+    transition: .5s;
+
+}
+.textField input:focus ~ label,
+.textField input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+.textField input:focus ~ span::before,
+.textField input:valid ~ span::before{
+    width: 100%;
+}
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #56b63d;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+
+}
+input[type="submit"]:hover{
+    border-color: #2691d9;
+    transition: .5s;
+}
+
