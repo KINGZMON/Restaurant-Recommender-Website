@@ -2,6 +2,7 @@ html{
   height:100%;
 }
 
+
 /*--------------Search-Box--------------*/
 .container1{
   width: 100%;
@@ -16,7 +17,9 @@ form{
   width: 700px;
   height: 55px;
   display: flex;
-  box-shadow: 10px 10px 5px lightgray;
+  box-shadow: 0px 0px 17px 3px rgba(163,163,163,0.75);
+-webkit-box-shadow: 0px 0px 17px 3px rgba(163,163,163,0.75);
+-moz-box-shadow: 0px 0px 17px 3px rgba(163,163,163,0.75);
   border: 1px solid#0B7E2D;
 
 }
@@ -27,9 +30,22 @@ form input{
   outline: none;
 }
 
-form button{
+form .search-button{
   background-color: #0B7E2D;
   padding: 10px 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 2px solid #fff; /* Green */
+  transition-duration: 0.4s;
+}
+
+
+form .random-button{
+  background-color: #0B7E2D;
+  padding: 10px;
   border: none;
   outline: none;
   color: #fff;
@@ -53,11 +69,15 @@ form .fa-location-pin{
 }
 
 #sidebar {
+  padding:20px;
+  margin-left:30px;
   width: 150px;
   float: left;
   background-color: #fff;
   min-height: 250px;
-  box-shadow: 10px 10px 5px lightgray;
+  box-shadow: 0px 0px 17px 0px rgba(163,163,163,0.75);
+-webkit-box-shadow: 0px 0px 17px 0px rgba(163,163,163,0.75);
+-moz-box-shadow: 0px 0px 17px 0px rgba(163,163,163,0.75);
 }
 
 #sidebar h4{
@@ -67,4 +87,53 @@ form .fa-location-pin{
 #Second{
 background-color: #fff;
 min-height: 600px;
+}
+
+
+/*------Buttons------*/
+
+.filter-button {
+  
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #0B7E2D;
+  border: 1px solid transparent;
+  border-radius: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  
+  min-height: 3rem;
+  padding: calc(.6rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  background-color: #0B7E2D;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.filter-button:hover {
+  transform: translateY(-1px);
+}
+
+.filter-button:active {
+  background-color: #0B7E2D;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
 }
