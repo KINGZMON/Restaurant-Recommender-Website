@@ -35,7 +35,7 @@
 .content h1{
     font-size: 30px;
     color: #222;
-    margin-top: 0px;
+    margin-top: 5px;
 
 }
 .content p{
@@ -52,7 +52,7 @@
 .content2 h1{
     font-size: 30px;
     color: #222;
-    margin-top: 0px;
+    margin-top: 10px;
 
 }
 .content2 p{
@@ -158,65 +158,22 @@
      
  }
 
+ @media screen and (min-height: 660px){
+    .imgDiv{
+        margin-top: -30%;
+        background-color: #222;
+        
+    }
+ }
+ @media screen and (max-height: 750px){
+    .imgDiv{
+        margin-top: -10%;
+        background-color: #222;
+        
+    }
+ }
+ 
+ 
 
-@media screen and (min-height: 760px){
 
-.image-section2{
-   margin-left: 0%;
-   margin-top: -8%;
-}
-.image-section3{
-    margin-left: 10%;
-    margin-top: -8%;
- }
- .image-section4{
-    margin-left: 20%;
-    margin-top: -8%;
- }
- .image-section5{
-    margin-left: 30%;
-    margin-top: -8%;
- }
- .image-section6{
-    margin-left: 40%;
-    margin-top: -8%;
- }
-}
-@media screen and (max-width: 768px){
-.image-section{
-        width: 100%;
-        float: none;
-    }
-    .content{
-        width: 100%;
-        float: left;
-        margin-left: 0px;
-    }
-    .content2{
-        width: 100%;
-        float: left;
-        margin-left: 0px;
-    }
-    .content h1{
-        font-size: 20px;
-        letter-spacing: 2px;
-        margin-top: 30px;
-        
-    
-    }
-    .content p{
-        font-size: 14px;
-        
-    }
-    .content2 h1{
-        font-size: 20px;
-        letter-spacing: 2px;
-        margin-top: 30px;
-    }
-    .content2 p{
-        font-size: 14px;
-        
-    }
-    
-}
 
