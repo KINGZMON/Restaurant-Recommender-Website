@@ -162,9 +162,25 @@
 @media screen and (min-height: 760px){
 
 .image-section2{
-   margin-left: 20%;
+   margin-left: 0%;
    margin-top: -8%;
 }
+.image-section3{
+    margin-left: 10%;
+    margin-top: -8%;
+ }
+ .image-section4{
+    margin-left: 20%;
+    margin-top: -8%;
+ }
+ .image-section5{
+    margin-left: 30%;
+    margin-top: -8%;
+ }
+ .image-section6{
+    margin-left: 40%;
+    margin-top: -8%;
+ }
 }
 @media screen and (max-width: 768px){
 .image-section{
@@ -201,5 +217,6 @@
         font-size: 14px;
         
     }
+    
 }
 
