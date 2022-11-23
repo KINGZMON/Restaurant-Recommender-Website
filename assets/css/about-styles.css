@@ -35,12 +35,12 @@
 .content h1{
     font-size: 30px;
     color: #222;
-    margin-top: 25px;
+    margin-top: 0px;
 
 }
 .content p{
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
     line-height: 1.5;
 }
 .content2{
@@ -52,7 +52,7 @@
 .content2 h1{
     font-size: 30px;
     color: #222;
-    margin-top: 25px;
+    margin-top: 0px;
 
 }
 .content2 p{
