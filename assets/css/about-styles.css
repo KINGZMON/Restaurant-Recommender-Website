@@ -89,6 +89,12 @@
   padding-top: 10px;
     
 }
+.name1{
+    position: absolute;
+    
+    padding-top: 7%;
+    
+}
 .image-section3{
     position: absolute;
     display: block;
@@ -105,6 +111,12 @@
    width: 70%;
    padding-top: 10px;
      
+ }
+ .name2{
+    position: absolute;
+    font-size: 16px;
+    padding-left: 10%;
+    padding-top: 7%;
  }
  .image-section4{
     position: absolute;
@@ -123,6 +135,12 @@
    padding-top: 10px;
      
  }
+ .name3{
+    position: absolute;
+    font-size: 16px;
+    padding-left: 20%;
+    padding-top: 7%;
+ }
  .image-section5{
     position: absolute;
     display: block;
@@ -140,6 +158,12 @@
    padding-top: 10px;
      
  }
+ .name4{
+    position: absolute;
+    font-size: 16px;
+    padding-left: 31%;
+    padding-top: 7%;
+ }
  .image-section6{
     position: absolute;
     display: block;
@@ -156,6 +180,12 @@
    width: 70%;
    padding-top: 10px;
      
+ }
+ .name5{
+    position: absolute;
+    font-size: 16px;
+    padding-left: 38%;
+    padding-top: 7%;
  }
 
  @media screen and (min-height: 660px){
