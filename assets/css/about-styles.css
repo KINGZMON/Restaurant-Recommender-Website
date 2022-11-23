@@ -161,14 +161,13 @@
  @media screen and (min-height: 660px){
     .imgDiv{
         margin-top: -30%;
-        background-color: #222;
+        
         
     }
  }
  @media screen and (max-height: 750px){
     .imgDiv{
         margin-top: -10%;
-        background-color: #222;
         
     }
  }
