@@ -10,11 +10,22 @@
     
     <title></title>
     
+    <script> 
+        $(function(){
+          $("#header").load("headfooter/header.html"); 
+          $("#footer").load("headfooter/footer.html"); 
+          
+        });
+    </script>
 
 </head>
 <body>
+
+    <!--Header-->
+    <div id="header"></div>
+
     <div class="wrapper">
-        <div class="row">
+        <div class="row-img">
             <div class="image-section">
                 <img src="assets/img/uml.png">
             </div>
@@ -39,23 +50,50 @@
                 2.Regular selection - The user provides name of city and
                 after that he will get a list of restaurants. He can choose one
                 of them and get information about it.</p>
+
+            <!--Team Entries Container-->
+    <div id="Team-Section">
+        <div id="Team-Entries">
+
+          <!--Entry 1-->
+          <div id="Team-Entry">
+            <a href="#"><img id="team-image" src="assets/img/man.png"></a>
+            <h6 id="team-heading"><a href="#">Povilas Jasvilis</a></h6>
+          </div>
+          <!--Entry 2-->
+          <div id="Team-Entry">
+            <a href="#"><img id="team-image" src="assets/img/man.png"></a>
+            <h6 id="team-heading"><a href="#">Turan Garashli</a></h6>
+          </div>
+          <!--Entry 3-->
+          <div id="Team-Entry">
+            <a href="#"><img id="team-image" src="assets/img/man.png"></a>
+            <h6 id="team-heading"><a href="#">Ali Jalilli</a></h6>
+          </div>
+          <!--Entry 4-->
+          <div id="Team-Entry">
+            <a href="#"><img id="team-image" src="assets/img/man.png"></a>
+            <h6 id="team-heading"><a href="#">Katrin Dianov</a></h6>
+          </div>
+          <!--Entry 5-->
+          <div id="Team-Entry">
+            <a href="#"><img id="team-image" src="assets/img/man.png"></a>
+            <h6 id="team-heading"><a href="#">Muhammad Yousuf Farooq</a></h6>
+          </div>
+          
         </div>
     </div>
-    
-        <div class="imgDiv">
-    <div class="image-section2"><img src="assets/img/man.png"></div>
-    <p class="name1">Katrin Dianov</p>
-    <div class="image-section3"><img src="assets/img/man.png"></div>
-    <p class="name2">Povilas Jasvilis</p>
-    <div class="image-section4"><img src="assets/img/man.png"></div>
-    <p class="name3">Turan Garashli</p>
-    <div class="image-section5"><img src="assets/img/man.png"></div>
-    <p class="name4">Ali Jalilli</p>
-    <div class="image-section6"><img src="assets/img/man.png"></div>
-    <p class="name5">Muhammad Yousuf Farooq</p>
+
         </div>
 
+        
+    </div>
 
+
+    
+    <!--Footer-->
+    <div id="footer"></div>
+    
     
     
     

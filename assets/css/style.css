@@ -127,6 +127,8 @@ min-height: 600px;
 }
 #restaurant-price-tag{
   font-size:14px;
+  margin-left:5px;
+  margin-right:5px;
 }
 #restaurant-heading a{
   text-decoration:none;
