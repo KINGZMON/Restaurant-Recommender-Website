@@ -18,17 +18,32 @@
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
     <!--Including Header+Footer-->
-    <script> 
+      <script> 
       $(function(){
         $("#header").load("headfooter/header.html"); 
         $("#footer").load("headfooter/footer.html"); 
-        
       });
       </script>
+    <!--Showing Popup-->
+    <script>
+      
+
+find_element = function(id) {
+  return document.getElementById(id);
+}
+
+var show = function(id) {
+	find_element(id).style.display ='block';
+}
+var hide = function(id) {
+	find_element(id).style.display ='none';
+}
+    </script>
 
     <script src="/assets/js/main.js"></script>
   </head>
 <body>
+  
 <div id="container">
 
   <!--Header-->
@@ -44,9 +59,39 @@
       <i class="fa-solid fa-location-pin"></i>
       <input type="text" placeholder="In which city do you want to eat?">
       <button type="sumbit" class="search-button">Search</button>
-      <button type="sumbit" class="random-button"><i class="fa-solid fa-dice"></i></button>
+      <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
     </form>
   </div>
+
+  <!--Hidden Popup-->
+  <div class="popup" id="popup1">
+    <div class="survey-heading-container">
+      <h4>Survey</h4>
+      <a class="close-popup" href="#" onclick="hide('popup1')"><i class="fa-solid fa-xmark"></i></a>
+    </div>
+		
+    <form class="randomizer_form">
+
+
+      <legend><span class="legend_number">1</span>Location</legend>
+      <label for="r_city">City</label><br>
+      <input type="text" name="r_city"><br><br>
+
+      <legend><span class="legend_number">2</span>Preferences</legend>
+      <p>Cuisine</p>
+         <input type="radio" id="Asian" name="fav_language" value="Asian">
+         <label for="Asian">Asian</label><br>
+         <input type="radio" id="Italian" name="fav_language" value="Italian">
+         <label for="Italian">Italian</label><br>
+         <input type="radio" id="European" name="fav_language" value="European">
+         <label for="European">European</label>
+         <br> 
+         <br>
+         <a class="suggestions-button" onclick="show('popup1')">Get Suggestion <i class="fa-solid fa-dice random-dice-icon"></i></a>
+    </form>
+		
+	</div>
+   
 
     <!--Filter-->
     <div id="main">

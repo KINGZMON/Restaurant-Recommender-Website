@@ -1,6 +1,136 @@
 html{
   height:100%;
 }
+/*--------------Hidden Popup (random search)--------------*/
+.popup {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  width:400px;
+  height:500px;
+  background: #FFF;
+  z-index: 20;
+}
+
+#popup1 {
+  -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+}
+
+.survey-heading-container{
+  text-align: center;
+  margin-bottom:30px;
+}
+.popup h4{
+  display:inline;
+  margin-bottom:20px;
+}
+
+.close-popup{
+  float:right;
+  color:#212529;
+}
+.close-popup:hover{
+  float:right;
+  color:#0B7E2D;
+}
+
+.popup form{
+  display:block;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.legend_number {
+  background-color:#0B7E2D;;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+.randomizer_form input[type="text"]{
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 5px;
+  width: 50%;
+  background-color: #e8eeef;
+}
+
+.randomizer_form input[type="radio"],
+.randomizer_form input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+
+
+.suggestions-button {
+  
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #0B7E2D;
+  border: 1px solid transparent;
+  border-radius: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  
+  min-height: 3rem;
+  padding: calc(.6rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.suggestions-button:hover,
+.suggestions-button:focus {
+  color:#fff;
+  background-color: #0B7E2D;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.suggestions-button:hover {
+  transform: translateY(-1px);
+}
+
+.suggestions-button:focus {
+  background-color: #0B7E2D;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.random-dice-icon{
+  margin-left:5px;
+}
+
 
 
 /*--------------Search-Box--------------*/
@@ -12,7 +142,7 @@ html{
   justify-content: center;
 }
 
-form{
+.container1 form{
   background-color: #fff;
   width: 700px;
   height: 55px;
@@ -21,7 +151,6 @@ form{
 -webkit-box-shadow: 0px 0px 17px 3px rgba(163,163,163,0.75);
 -moz-box-shadow: 0px 0px 17px 3px rgba(163,163,163,0.75);
   border: 1px solid#0B7E2D;
-
 }
 
 form input{
@@ -53,7 +182,13 @@ form .random-button{
   cursor: pointer;
   border: 2px solid #fff; /* Green */
   transition-duration: 0.4s;
+  text-decoration:none;
 }
+
+form .random-button:hover{
+  color: #fff;
+}
+
 
 form .fa-location-pin{
  align-self: center;
