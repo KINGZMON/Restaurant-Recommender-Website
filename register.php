@@ -29,7 +29,5 @@
         header("location: login.html");
         exit;
     }
-
-
 ?>
 
