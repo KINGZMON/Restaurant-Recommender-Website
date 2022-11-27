@@ -17,31 +17,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
+
     <!--Including Header+Footer-->
-      <script> 
+    <script> 
       $(function(){
         $("#header").load("headfooter/header.html"); 
         $("#footer").load("headfooter/footer.html"); 
       });
-      </script>
-    <!--Showing Popup-->
+    </script>
+    
+    <!--For regular search-->
     <script>
-      
-
-find_element = function(id) {
-  return document.getElementById(id);
-}
-
-var show = function(id) {
-	find_element(id).style.display ='block';
-}
-var hide = function(id) {
-	find_element(id).style.display ='none';
-}
+    let restaurant = document.querySelectorAll('.Restaurant-Entry')
+    
+    function liveSearch() {
+        let search_query = document.getElementById("Restaurant-heading").value;
+        
+        //Use innerText if all contents are visible
+        //Use textContent for including hidden elements
+        for (var i = 0; i < cards.length; i++) {
+            if(cards[i].textContent.toLowerCase()
+                    .includes(search_query.toLowerCase())) {
+                cards[i].classList.remove("is-hidden");
+            } else {
+                cards[i].classList.add("is-hidden");
+            }
+        }
+    }
+    //A little delay
+    let typingTimer;               
+    let typeInterval = 500;  
+    let searchInput = document.getElementById('searchbox');
+    searchInput.addEventListener('keyup', () => {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(liveSearch, typeInterval);
+    });
     </script>
 
-    <script src="/assets/js/main.js"></script>
-  </head>
+    <!--Showing Popup for random selection-->
+    <script>
+    find_element = function(id) {
+    return document.getElementById(id);
+    }
+    var show = function(id) {
+      find_element(id).style.display ='block';
+    }
+    var hide = function(id) {
+      find_element(id).style.display ='none';
+    }
+    </script>
+    script src="/assets/js/main.js"></script>
+    </head>
+
 <body>
   
 <div id="container">
@@ -57,7 +84,7 @@ var hide = function(id) {
   <div class="container1">
     <form>
       <i class="fa-solid fa-location-pin"></i>
-      <input type="text" placeholder="In which city do you want to eat?">
+      <input type="search" oninput="liveSearch()" id="searchbox" placeholder="In which city do you want to eat?">
       <button type="sumbit" class="search-button">Search</button>
       <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
     </form>
@@ -69,14 +96,10 @@ var hide = function(id) {
       <h4>Survey</h4>
       <a class="close-popup" href="#" onclick="hide('popup1')"><i class="fa-solid fa-xmark"></i></a>
     </div>
-		
     <form class="randomizer_form">
-
-
       <legend><span class="legend_number">1</span>Location</legend>
       <label for="r_city">City</label><br>
       <input type="text" name="r_city"><br><br>
-
       <legend><span class="legend_number">2</span>Preferences</legend>
       <p>Cuisine</p>
          <input type="radio" id="Asian" name="fav_language" value="Asian">
@@ -89,11 +112,9 @@ var hide = function(id) {
          <br>
          <a class="suggestions-button" onclick="show('popup1')">Get Suggestion <i class="fa-solid fa-dice random-dice-icon"></i></a>
     </form>
-		
 	</div>
-   
-
-    <!--Filter-->
+  
+    <!--Filter section-->
     <div id="main">
       <div id="sidebar">
         <h4> Filter by</h4>
@@ -140,6 +161,7 @@ var hide = function(id) {
             <i class="fa fa-star" aria-hidden="true"></i>
          </span>
         </div>
+
         <!--Entry Example 2-->
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/events-bg.jpg"></a>
@@ -157,8 +179,11 @@ var hide = function(id) {
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
+
+            <!-- Put any keywords here -->
+            <span class="is-hidden">secret</span> 
          </span>
-        </div>
+         
         <!--Entry Example 3-->
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/event-birthday.jpg"></a>
@@ -258,6 +283,7 @@ var hide = function(id) {
             <i class="fa fa-star" aria-hidden="true"></i>
          </span>
         </div>
+        
         <!--Entry Example 8-->
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/restaurant8.jpg"></a>
