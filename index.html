@@ -43,7 +43,7 @@ var hide = function(id) {
     <!--Filtered Search-->
     <script>
       $(document).ready(function() {
-          $.getScript("/assets/js/filtered-search.js");
+          $.getScript("/assets/js/normal-search.js");
       });
     </script>
 
@@ -59,7 +59,20 @@ var hide = function(id) {
       find_element(id).style.display ='none';
     }
     </script>
-    <script src="/assets/js/main.js"></script>
+    
+    <!--Random Search-->
+    <script>
+      $(document).ready(function() {
+          $.getScript("/assets/js/random-search.js");
+      });
+    </script>
+
+    <!--Side Filter Search-->
+    <script>
+      $(document).ready(function() {
+          $.getScript("/assets/js/side-filters.js");
+      });
+    </script>
     </head>
 
 <body>
@@ -78,7 +91,7 @@ var hide = function(id) {
     <form>
       <i class="fa-solid fa-location-pin"></i>
       <input type="search" id="searchbox" placeholder="In which city do you want to eat?">
-      <button type="sumbit" class="search-button">Search</button>
+      <button class="search-button" onclick="liveSearch()">Search</button>
       <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
     </form>
   </div>
@@ -92,18 +105,27 @@ var hide = function(id) {
     <form class="randomizer_form">
       <legend><span class="legend_number">1</span>Location</legend>
       <label for="r_city">City</label><br>
-      <input type="text" name="r_city"><br><br>
+      <input type="text" name="r_city" id="r_city"><br><br>
       <legend><span class="legend_number">2</span>Preferences</legend>
       <p>Cuisine</p>
-         <input type="radio" id="Asian" name="fav_language" value="Asian">
+         <input type="radio" id="Asian" name="radio_cuisine" value="Asian">
          <label for="Asian">Asian</label><br>
-         <input type="radio" id="Italian" name="fav_language" value="Italian">
+         <input type="radio" id="Italian" name="radio_cuisine" value="Italian">
          <label for="Italian">Italian</label><br>
-         <input type="radio" id="European" name="fav_language" value="European">
+         <input type="radio" id="European" name="radio_cuisine" value="European">
          <label for="European">European</label>
          <br> 
          <br>
-         <a class="suggestions-button" onclick="show('popup1')">Get Suggestion <i class="fa-solid fa-dice random-dice-icon"></i></a>
+
+      <p>Price</p>
+         <input type="radio" id="age1" name="radio_price" value="1">
+         <label for="age1">Cheap Eats</label><br>
+         <input type="radio" id="age2" name="radio_price" value="2">
+         <label for="age2">Mid-Range</label><br>  
+         <input type="radio" id="age3" name="radio_price" value="3">
+         <label for="age3">Fine Dining</label><br><br>
+
+         <a class="suggestions-button" onclick="randomSearch()">Get Suggestion <i class="fa-solid fa-dice random-dice-icon"></i></a>
     </form>
 	</div>
    
@@ -113,22 +135,22 @@ var hide = function(id) {
       <div id="sidebar">
         <h4> Filter by</h4>
         <p>Cuisine</p>
-         <input type="radio" id="Asian" name="fav_language" value="Asian">
+         <input type="radio" id="Asian" name="radio_cuisine_side" value="Asian">
          <label for="Asian">Asian</label><br>
-         <input type="radio" id="Italian" name="fav_language" value="Italian">
+         <input type="radio" id="Italian" name="radio_cuisine_side" value="Italian">
          <label for="Italian">Italian</label><br>
-         <input type="radio" id="European" name="fav_language" value="European">
+         <input type="radio" id="European" name="radio_cuisine_side" value="European">
          <label for="European">European</label>
         <br>  
         <br> 
         <p>Price</p>
-        <input type="radio" id="age1" name="age" value="30">
+        <input type="radio" id="age1" name="radio_price_side" value="price=1">
         <label for="age1">Cheap Eats</label><br>
-        <input type="radio" id="age2" name="age" value="60">
+        <input type="radio" id="age2" name="radio_price_side" value="price=2">
         <label for="age2">Mid-Range</label><br>  
-        <input type="radio" id="age3" name="age" value="100">
+        <input type="radio" id="age3" name="radio_price_side" value="price=3">
         <label for="age3">Fine Dining</label><br><br>
-        <input class="filter-button" type="submit" value="Apply">
+        <input class="filter-button" type="submit" value="Apply" onclick="filterSearch()">
       </div>
 
 
@@ -141,11 +163,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/about-bg.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading">Restaurant 1</h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$$$</a><a class="is-hidden">price=3</a>
             <i class="fa-solid fa-square-parking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">Italian, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -160,11 +182,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/events-bg.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 2</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$</a><a class="is-hidden">price=1</a>
             <i class="fa-solid fa-person-walking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">European, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -181,11 +203,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/event-birthday.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 3</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$</a><a class="is-hidden">price=1</a>
             <i class="fa-solid fa-square-parking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">Asian, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -200,11 +222,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/event-custom.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 4</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$</a><a class="is-hidden">price=1</a>
             <i class="fa-solid fa-person-walking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">Italian, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -227,11 +249,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/event-private.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 5</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$$</a><a class="is-hidden">price=2</a>
             <i class="fa-solid fa-square-parking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">European, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -246,11 +268,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/restaurant6.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 6</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$$$</a><a class="is-hidden">price=3</a>
             <i class="fa-solid fa-person-walking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">Asian, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -265,11 +287,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/restaurant7.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 7</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$$$</a><a class="is-hidden">price=3</a>
             <i class="fa-solid fa-square-parking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">Italian, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -284,11 +306,11 @@ var hide = function(id) {
           <a href="#"><img id="restaurant-image" src="assets/img/restaurant8.jpg"></a>
           <div id="res-heading-container">
             <h6 id="restaurant-heading"><a href="#">Restaurant 8</a></h6>
-            <a id="restaurant-price-tag">$$$</a>
+            <a id="restaurant-price-tag">$$$</a><a class="is-hidden">price=3</a>
             <i class="fa-solid fa-person-walking"></i>
           </div>
           
-          <a id="restaurant-cuisines">Cuisine 1, Cuisine 2, Cuisine 3</a>
+          <a id="restaurant-cuisines">European, Cuisine 2, Cuisine 3</a>
           <br>
           <span id="restaurant-stars" style="width:88%">
             <i class="fa fa-star" aria-hidden="true"></i>

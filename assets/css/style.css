@@ -6,11 +6,11 @@ html{
   display: none;
   position: absolute;
   padding: 20px;
-  top: 80%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -80%);
-  width:400px;
-  height:500px;
+  transform: translate(-50%, -40%);
+  width:30vw;
+  height:90vh;
   background: #FFF;
   z-index: 20;
 }
