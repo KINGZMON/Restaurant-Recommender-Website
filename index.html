@@ -17,13 +17,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
-
     <!--Including Header+Footer-->
-    <script> 
+      <script> 
       $(function(){
         $("#header").load("headfooter/header.html"); 
         $("#footer").load("headfooter/footer.html"); 
       });
+      </script>
+    <!--Showing Popup-->
+    <script>
+      
+
+find_element = function(id) {
+  return document.getElementById(id);
+}
+
+var show = function(id) {
+	find_element(id).style.display ='block';
+}
+var hide = function(id) {
+	find_element(id).style.display ='none';
+}
     </script>
     
     <!--Filtered Search-->
@@ -92,8 +106,9 @@
          <a class="suggestions-button" onclick="show('popup1')">Get Suggestion <i class="fa-solid fa-dice random-dice-icon"></i></a>
     </form>
 	</div>
-  
-    <!--Filter section-->
+   
+
+    <!--Filter-->
     <div id="main">
       <div id="sidebar">
         <h4> Filter by</h4>
@@ -125,7 +140,7 @@
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/about-bg.jpg"></a>
           <div id="res-heading-container">
-            <h6 id="restaurant-heading"><a href="#">Restaurant 1</a></h6>
+            <h6 id="restaurant-heading">Restaurant 1</h6>
             <a id="restaurant-price-tag">$$$</a>
             <i class="fa-solid fa-square-parking"></i>
           </div>
@@ -140,7 +155,6 @@
             <i class="fa fa-star" aria-hidden="true"></i>
          </span>
         </div>
-
         <!--Entry Example 2-->
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/events-bg.jpg"></a>
@@ -199,6 +213,10 @@
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
          </span>
+
+         <!-- Put any keywords here -->
+         <span class="is-hidden">secret</span> 
+
         </div>
         
         <!--Break Element (For New Row)-->
@@ -261,7 +279,6 @@
             <i class="fa fa-star" aria-hidden="true"></i>
          </span>
         </div>
-        
         <!--Entry Example 8-->
         <div id="Restaurant-Entry">
           <a href="#"><img id="restaurant-image" src="assets/img/restaurant8.jpg"></a>
