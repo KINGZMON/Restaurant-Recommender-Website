@@ -26,32 +26,11 @@
       });
     </script>
     
-    <!--For regular search-->
+    <!--Filtered Search-->
     <script>
-    let restaurant = document.querySelectorAll('.Restaurant-Entry')
-    
-    function liveSearch() {
-        let search_query = document.getElementById("Restaurant-heading").value;
-        
-        //Use innerText if all contents are visible
-        //Use textContent for including hidden elements
-        for (var i = 0; i < cards.length; i++) {
-            if(cards[i].textContent.toLowerCase()
-                    .includes(search_query.toLowerCase())) {
-                cards[i].classList.remove("is-hidden");
-            } else {
-                cards[i].classList.add("is-hidden");
-            }
-        }
-    }
-    //A little delay
-    let typingTimer;               
-    let typeInterval = 500;  
-    let searchInput = document.getElementById('searchbox');
-    searchInput.addEventListener('keyup', () => {
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(liveSearch, typeInterval);
-    });
+      $(document).ready(function() {
+          $.getScript("/assets/js/filtered-search.js");
+      });
     </script>
 
     <!--Showing Popup for random selection-->
@@ -66,7 +45,7 @@
       find_element(id).style.display ='none';
     }
     </script>
-    script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     </head>
 
 <body>
@@ -84,7 +63,7 @@
   <div class="container1">
     <form>
       <i class="fa-solid fa-location-pin"></i>
-      <input type="search" oninput="liveSearch()" id="searchbox" placeholder="In which city do you want to eat?">
+      <input type="search" id="searchbox" placeholder="In which city do you want to eat?">
       <button type="sumbit" class="search-button">Search</button>
       <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
     </form>
@@ -180,9 +159,8 @@
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
 
-            <!-- Put any keywords here -->
-            <span class="is-hidden">secret</span> 
          </span>
+         </div>
          
         <!--Entry Example 3-->
         <div id="Restaurant-Entry">
