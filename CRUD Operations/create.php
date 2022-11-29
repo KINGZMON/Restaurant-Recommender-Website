@@ -8,25 +8,23 @@ $connection = new mysqli($servername, $username, $password, $database);
 
 
 $name = "";
-$email = "";
-$phone = "";
+$pass = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
   $name = $_POST["name"];
-  $email = $_POST["email"];
-  $phone = $_POST["phone"];
+  $pass = $_POST["pass"];
 
   do {
-    if ( empty($name) || empty($email) || empty($phone) ) {
+    if ( empty($name) || empty($pass) ) {
       $errorMessage = "All the fields are required";
       break;
     }
     
-    $sql = "INSERT INTO clients (name, email, phone) " . 
-           "VALUES ('$name', '$email', '$phone')";
+    $sql = "INSERT INTO clients (name, pass) " . 
+           "VALUES ('$name', '$pass')";
     $result = $connection->query($sql);
     
     if(!$result) {
@@ -35,8 +33,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $name = "";
-    $email = "";
-    $phone = "";
+    $pass = "";
 
     $successMessage = "Client added correctly";
 
@@ -79,15 +76,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
         </div>
         <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Email</label>
+          <label class="col-sm-3 col-form-label">Pass</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Phone</label>
-          <div class="col-sm-6">
-            <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
+            <input type="text" class="form-control" name="pass" value="<?php echo $pass; ?>">
           </div>
         </div>
 

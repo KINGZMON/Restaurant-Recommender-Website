@@ -17,8 +17,7 @@
           <tr>
             <th>ID</th> 
             <th>Name</th> 
-            <th>Email</th> 
-            <th>Phone</th> 
+            <th>Pass</th>  
             <th>Created At</th>
             <th>Action</th>  
           </tr>
@@ -55,8 +54,7 @@
             <tr>
             <td>$row[id]</td>
             <td>$row[name]</td>
-            <td>$row[email]</td>
-            <td>$row[phone]</td>
+            <td>$row[pass]</td>
             <td>$row[created_at]</td>
             <td>
               <a class='btn btn-primary btn-sm' href='/userregistration/edit.php?id=$row[id]'>Edit</a>

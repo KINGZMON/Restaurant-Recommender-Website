@@ -8,8 +8,7 @@ $connection = new mysqli($servername, $username, $password, $database);
 
 $id = "";
 $name = "";
-$email = "";
-$phone = "";
+$pass = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -31,23 +30,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
   }
 
   $name = $row["name"];
-  $email = $row["email"];
-  $phone = $row["phone"];
+  $pass = $row["pass"];
 }
 else {
     $id = $_POST["id"];
     $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
+    $pass = $_POST["pass"];
 
     do {
-        if ( empty($id) || empty($name) || empty($email) || empty ($phone) ) {
+        if ( empty($id) || empty($name) || empty($pass) ) {
           $errorMessage = "All the fields are required";
           break;
         }
 
         $sql = "UPDATE clients " . 
-        "SET name = '$name', email ='$email', phone = '$phone' " . 
+        "SET name = '$name', pass ='$pass' " . 
         "WHERE id = $id";
 
         $result = $connection->query($sql);
@@ -100,15 +97,9 @@ else {
           </div>
         </div>
         <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Email</label>
+          <label class="col-sm-3 col-form-label">Pass</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Phone</label>
-          <div class="col-sm-6">
-            <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
+            <input type="text" class="form-control" name="pass" value="<?php echo $pass; ?>">
           </div>
         </div>
 
