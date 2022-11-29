@@ -14,6 +14,14 @@
         die('Connection Failed : '. $conn->connect_error);
     }
     else{
+        // If Fields are empty
+        if ( empty($email) || empty($username) || empty($password) ){
+            exit("All the fields are required");
+        }
+        // If input username is admin (not allowed)
+        else if($username == "admin"){
+            exit("Invalid Username!");
+        }
         // (!) Table Name
         $stmt = $conn->prepare("insert into user_table(email, username, password) values(?, ?, ?)");
 
@@ -26,7 +34,7 @@
         $stmt->close();
         $conn->close();
 
-        header("location: login.html");
+        header("location: ../login.html");
         exit;
     }
 ?>

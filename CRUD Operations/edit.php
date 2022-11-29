@@ -1,8 +1,16 @@
 <?php
+
+// Prevent direct access to this file (else poses security gap)
+if(!isset($_SERVER['HTTP_REFERER'])){
+  // redirect them to your desired location
+  header('location: ../index.html');
+  exit;
+}
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "userregistration";
+$database = "users";
 
 $connection = new mysqli($servername, $username, $password, $database);
 
@@ -15,22 +23,22 @@ $successMessage = "";
 
 if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
   if ( !isset($_GET["id"]) ) {
-    header("location: /userregistration/index.php");
+    header("location: index.php");
     exit;
   }
   $id = $_GET["id"];
 
-  $sql = "SELECT * FROM clients WHERE id=$id";
+  $sql = "SELECT * FROM user_table WHERE id=$id";
   $result = $connection->query($sql);
   $row = $result->fetch_assoc();
 
   if (!$row) {
-    header("location: /userregistration/index.php");
+    header("location: index.php");
     exit;
   }
 
-  $name = $row["name"];
-  $pass = $row["pass"];
+  $name = $row["Username"];
+  $pass = $row["Password"];
 }
 else {
     $id = $_POST["id"];
@@ -43,8 +51,8 @@ else {
           break;
         }
 
-        $sql = "UPDATE clients " . 
-        "SET name = '$name', pass ='$pass' " . 
+        $sql = "UPDATE user_table " . 
+        "SET Username = '$name', Password ='$pass' " . 
         "WHERE id = $id";
 
         $result = $connection->query($sql);
@@ -56,7 +64,7 @@ else {
 
         $successMessage = "Client updated correctly";
 
-        header( "location: /userregistration/index.php" );
+        header( "location: index.php" );
         exit;
 
     } while(false);
