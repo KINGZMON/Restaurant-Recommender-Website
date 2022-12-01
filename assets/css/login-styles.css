@@ -4,7 +4,7 @@ html{
 
 #login-section{
     background-color:#0B7E2D;
-    height:600px;
+    height:80vh;
 }
 .logInPanel{
     position: relative;
@@ -25,7 +25,7 @@ html{
     width: 300px;
 }
 .logInPanel form{
-    padding: 100px 100px;
+    padding: 80px 100px;
     box-sizing: border-box;
 }
 form .textField{
