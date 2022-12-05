@@ -1,6 +1,18 @@
 html{
   height:100%;
 }
+/*--------------User Panel--------------*/
+
+
+#user-panel{
+  margin-left:20px;
+  border: 1px solid transparent;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  border-radius: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 3px 0;
+
+}
 /*--------------Hidden Popup (random search)--------------*/
 .popup {
   display: none;
@@ -15,7 +27,7 @@ html{
   z-index: 20;
 }
 
-.is-hidden { display: none; }
+.is-hidden { display: none !important; }
 
 #popup1 {
   -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
@@ -144,7 +156,7 @@ legend {
   justify-content: center;
 }
 
-.container1 form{
+.container1 #form-container{
   background-color: #fff;
   width: 700px;
   height: 55px;
@@ -155,13 +167,13 @@ legend {
   border: 1px solid#0B7E2D;
 }
 
-form input{
+#form-container input{
   flex: 1;
   border: none;
   outline: none;
 }
 
-form .search-button{
+#form-container .search-button{
   background-color: #0B7E2D;
   padding: 10px 50px;
   border: none;
@@ -174,7 +186,7 @@ form .search-button{
 }
 
 
-form .random-button{
+#form-container .random-button{
   background-color: #0B7E2D;
   padding: 10px;
   border: none;
@@ -187,12 +199,12 @@ form .random-button{
   text-decoration:none;
 }
 
-form .random-button:hover{
+#form-container .random-button:hover{
   color: #fff;
 }
 
 
-form .fa-location-pin{
+#form-container .fa-location-pin{
  align-self: center;
  padding: 10px 20px;
  color: #0B7E2D;

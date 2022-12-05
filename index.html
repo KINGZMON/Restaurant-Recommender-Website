@@ -40,17 +40,28 @@ var hide = function(id) {
 }
     </script>
     
-    <!--Filtered Search-->
+    <!--Filtered Search + Random Search + Side Filter Search-->
     <script>
       $(document).ready(function() {
           $.getScript("/assets/js/normal-search.js");
+          $.getScript("/assets/js/random-search.js");
+          $.getScript("/assets/js/side-filters.js");
+      });
+    </script>
+
+    
+    <!--AJAX (User Panel)-->
+    <script>
+      // Get script
+      $(document).ready(function() {
+          $.getScript("/assets/js/user-panel.js");
       });
     </script>
 
     <!--Showing Popup for random selection-->
     <script>
     find_element = function(id) {
-    return document.getElementById(id);
+      return document.getElementById(id);
     }
     var show = function(id) {
       find_element(id).style.display ='block';
@@ -60,22 +71,10 @@ var hide = function(id) {
     }
     </script>
     
-    <!--Random Search-->
-    <script>
-      $(document).ready(function() {
-          $.getScript("/assets/js/random-search.js");
-      });
-    </script>
-
-    <!--Side Filter Search-->
-    <script>
-      $(document).ready(function() {
-          $.getScript("/assets/js/side-filters.js");
-      });
-    </script>
     </head>
 
-<body>
+<!--After page and scripts fully loaded, call main user panel function-->
+<body onload="control_user_panel()">
   
 <div id="container">
 
@@ -88,12 +87,12 @@ var hide = function(id) {
 
   <!--Search box-->
   <div class="container1">
-    <form>
+    <div id="form-container">
       <i class="fa-solid fa-location-pin"></i>
       <input type="search" id="searchbox" placeholder="In which city do you want to eat?">
       <button class="search-button" onclick="liveSearch()">Search</button>
       <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
-    </form>
+    </div>
   </div>
 
   <!--Hidden Popup-->
