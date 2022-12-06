@@ -14,7 +14,7 @@ if(isset($_POST['username'])){
   $password=$_POST['password'];
   $password = stripcslashes($password); // sqli protection
   $password = mysqli_real_escape_string($connection, $password); // sqli protection
-  $encrypted_pass = substr(md5($password), 0, 20); // hash of user password (note: 20 is no. of characters cuz our database stores max 20 characters & hash is 32 characters long)
+  $encrypted_pass = md5($password); // hash of user password
 
   // Find matching entry in DB
   $sql="select * from user_table where Username='".$uname."'AND Password='".$encrypted_pass."' limit 1";
