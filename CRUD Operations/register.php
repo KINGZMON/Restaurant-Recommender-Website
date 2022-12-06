@@ -3,6 +3,7 @@
     // Form input names
     $email = $_POST['Email'];
     $username = $_POST['Username'];
+    $checkpassword = $_POST['Password'];
     $password = $_POST['Password-Final'];
 
 
@@ -15,12 +16,15 @@
     }
     else{
         // If Fields are empty
-        if ( empty($email) || empty($username) || empty($password) ){
+        if ( empty($email) || empty($username) || empty($checkpassword) || empty($password) ){
             exit("All the fields are required");
         }
         // If input username is admin (not allowed)
         else if($username == "admin"){
             exit("Invalid Username!");
+        }
+        else if($checkpassword != $password){
+            exit("Passwords do not match!");
         }
         // (!) Table Name
         $stmt = $conn->prepare("insert into user_table(email, username, password) values(?, ?, ?)");
