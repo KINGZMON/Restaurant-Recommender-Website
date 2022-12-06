@@ -8,7 +8,12 @@ if(isset($_POST['username'])){
 
   // Form input names
   $uname=$_POST['username'];
+  $uname = stripcslashes($uname); //sqli protection
+  $uname = mysqli_real_escape_string($connection, $uname); //sqli protection
+
   $password=$_POST['password'];
+  $password = stripcslashes($password); //sqli protection
+  $password = mysqli_real_escape_string($connection, $password); //sqli protection
 
   // Find matching entry in DB
   $sql="select * from user_table where Username='".$uname."'AND Password='".$password."'limit 1";
