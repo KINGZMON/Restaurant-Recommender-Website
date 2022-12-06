@@ -3,6 +3,7 @@
     // Form input names
     $email = $_POST['Email'];
     $username = $_POST['Username'];
+    $username = htmlspecialchars($username);
     $checkpassword = $_POST['Password'];
     $password = $_POST['Password-Final'];
 
