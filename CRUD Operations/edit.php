@@ -1,5 +1,11 @@
 <?php
 
+// Check session for timeout
+$is_expired = require '../assets/php/session-check.php';
+if ($is_expired == "true"){
+  exit;
+}
+
 // Prevent direct access to this file (else poses security gap)
 if(!isset($_SERVER['HTTP_REFERER'])){
   // redirect them to your desired location

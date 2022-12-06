@@ -23,6 +23,9 @@ if(isset($_POST['username'])){
 
   // IF Found
   if(mysqli_num_rows($result)==1){
+    // Create session
+    include '../assets/php/session-check.php';
+    
     // If admin, redirect to editing page
     if($uname == "admin"){
       header("location: index.php");
