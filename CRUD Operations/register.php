@@ -1,16 +1,16 @@
 <?php
 
+    // Database Connection
+    // (!) Database Name
+    $conn = new mysqli('localhost', 'root', '', 'users');
+
     // Form input names
     $email = $_POST['Email'];
     $username = $_POST['Username'];
     $username = htmlspecialchars($username);
-    $checkpassword = $_POST['Password'];
-    $password = $_POST['Password-Final'];
 
-
-    // Database Connection
-    // (!) Database Name
-    $conn = new mysqli('localhost', 'root', '', 'users'); 
+    $checkpassword = mysqli_real_escape_string($conn, $_POST['Password']);
+    $password = mysqli_real_escape_string($conn, $_POST['Password-Final']);
 
     if($conn->connect_error){
         die('Connection Failed : '. $conn->connect_error);
@@ -24,23 +24,39 @@
         else if($username == "admin"){
             exit("Invalid Username!");
         }
+        // If password and confirm password do not match
         else if($checkpassword != $password){
             exit("Passwords do not match!");
         }
-        // (!) Table Name
-        $stmt = $conn->prepare("insert into user_table(email, username, password) values(?, ?, ?)");
 
-        // types of params
-        $stmt->bind_param("sss", $email, $username, $password);
+        // Checking if username taken
+        $query = "select * from user_table where Username='".$username."'";
+        $result = $conn->query($query);
 
-        // execute db query
-        $stmt->execute();
+        $numrows = mysqli_num_rows($result);
+        if($numrows == 0){
+            $encrypted_pass = md5($password); // get hash of password
         
-        $stmt->close();
-        $conn->close();
+            // (!) Table Name
+            $stmt = $conn->prepare("insert into user_table(email, username, password) values(?, ?, ?)");
 
-        header("location: ../login.html");
-        exit;
+            // types of params
+            $stmt->bind_param("sss", $email, $username, $encrypted_pass);
+
+            // execute db query
+            $stmt->execute();
+    
+            $stmt->close();
+            $conn->close();
+
+            header("location: ../login.html");
+            exit;
+
+        }
+        else{
+            exit("Username taken!");
+        }
+        
     }
 ?>
 
