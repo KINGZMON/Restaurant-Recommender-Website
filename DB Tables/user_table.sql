@@ -44,7 +44,6 @@ INSERT INTO `user_table` (`id`, `Email`, `Username`, `Password`, `Time`) VALUES
 (2, 'example1@gmail.com', 'John', '6cb75f652a9b52798eb6cf2201057c73', '2022-12-06 19:01:25.66'),
 (3, 'example2@gmail.com', 'Hank', '819b0643d6b89dc9b579fdfc9094f28e', '2022-12-06 19:01:39.83'),
 (4, 'example3@gmail.com', 'Merl', '34cc93ece0ba9e3f6f235d4af979b16c', '2022-12-06 19:01:55.99'),
-(22, 'cityboy123@gmail.com', 'cityboy123', '900150983cd24fb0d6963f7d28e17f72', '2022-12-06 19:01:08.90');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +63,7 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
