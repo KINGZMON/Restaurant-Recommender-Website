@@ -28,7 +28,7 @@
           // Prevent direct access to this file (else poses security gap)
           if(!isset($_SERVER['HTTP_REFERER'])){
             // redirect them to your desired location
-            header('location: ../index.html');
+            header('location: ../index.php');
             exit;
           }
 

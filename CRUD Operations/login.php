@@ -28,7 +28,7 @@ if(isset($_POST['username'])){
     
     // If admin, redirect to editing page
     if($uname == "admin"){
-      header("location: index.php");
+      header("location: admin_panel.php");
       exit;
     }
     // If simple user, create cookie, redirect to main page.
