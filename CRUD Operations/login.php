@@ -34,7 +34,7 @@ if(isset($_POST['username'])){
     // If simple user, create cookie, redirect to main page.
     else{
       include '../assets/php/create-cookie.php';
-      header("location: ../index.html");
+      header("location: ../index.php");
       exit;
     }
   
