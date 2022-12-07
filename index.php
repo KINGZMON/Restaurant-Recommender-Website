@@ -85,8 +85,8 @@ var hide = function(id) {
   <div id="header"></div>
 
   <!--Map-->
-  <iframe src="https://my.atlistmaps.com/map/db571de2-5a75-4acf-a3f9-89735683f7a3?share=true"
-  allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+  <iframe src="https://my.atlistmaps.com/map/4291758d-0319-48d4-a8ce-895a913be823?share=true" 
+    allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
   <!--Search box-->
   <div class="container1">
