@@ -9,7 +9,7 @@ if ($is_expired == "true"){
 // Prevent direct access to this file (else poses security gap)
 if(!isset($_SERVER['HTTP_REFERER'])){
   // redirect them to your desired location
-  header('location: ../index.html');
+  header('location: ../index.php');
   exit;
 }
 
@@ -28,6 +28,6 @@ if ( isset($_GET["id"]) ) {
   $connection->query($sql);
 }
 
-header("location: index.php");
+header("location: admin_panel.php");
 exit;
 ?>

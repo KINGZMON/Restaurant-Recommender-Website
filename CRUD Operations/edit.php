@@ -9,7 +9,7 @@ if ($is_expired == "true"){
 // Prevent direct access to this file (else poses security gap)
 if(!isset($_SERVER['HTTP_REFERER'])){
   // redirect them to your desired location
-  header('location: ../index.html');
+  header('location: ../index.php');
   exit;
 }
 
@@ -29,7 +29,7 @@ $successMessage = "";
 
 if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
   if ( !isset($_GET["id"]) ) {
-    header("location: index.php");
+    header("location: admin_panel.php");
     exit;
   }
   $id = $_GET["id"];
@@ -39,7 +39,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
   $row = $result->fetch_assoc();
 
   if (!$row) {
-    header("location: index.php");
+    header("location: admin_panel.php");
     exit;
   }
 
@@ -70,7 +70,7 @@ else {
 
         $successMessage = "Client updated correctly";
 
-        header( "location: index.php" );
+        header( "location: admin_panel.php" );
         exit;
 
     } while(false);
@@ -137,7 +137,7 @@ else {
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
           <div class="col-sm-3 d-grid">
-            <a class="btn btn-outline-primary" href="/userregistration/index.php" role="button">Cancel</a>
+            <a class="btn btn-outline-primary" href="admin_panel.php" role="button">Cancel</a>
           </div>
         </div>
       </form>
