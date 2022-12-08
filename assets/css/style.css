@@ -11,7 +11,13 @@ html{
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   border-radius: 1.8rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0 1px 3px 0;
+  vertical-align:middle;
+}
 
+#user-logout{
+  text-decoration:none;
+  margin-left:3px;
+  color:#4d4d4d;
 }
 /*--------------Hidden Popup (random search)--------------*/
 .popup {
