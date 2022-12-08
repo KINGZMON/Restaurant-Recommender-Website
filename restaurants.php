@@ -15,10 +15,15 @@
     $sql = "SELECT * FROM restaurant_info ORDER BY 'DATE' ASC"; // ASC means you're ordering from newest to oldest
     $result = $conn->query($sql);
 
+    $sql2 = "SELECT * FROM menu_links ORDER BY 'DATE' ASC"; // ASC means you're ordering from newest to oldest
+    $result2 = $conn->query($sql2);
+
+
     $price_txt = "price=";
-    if ($result->num_rows > 0) {
+    if ($result->num_rows > 0 && $result2->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
+            $row2 = $result2->fetch_assoc();
             if ($row['price_range'] == 1) {
             $actual_price = "$";
             }
@@ -46,7 +51,7 @@
             echo "<a id='restaurant-price-tag'>$actual_price</a><a class='is-hidden'>$price_txt" . $row['price_range'] . "</a>";
             echo "<a class='is-hidden'>" . $row['location'] . "</a>";
             echo "<i class='fa-solid fa-square-parking'></i>";
-            echo "<i class='fa-solid fa-utensils'></i>";
+            echo "<a href=" . $row2['link'] . "><i class='fa-solid fa-utensils'></i></a>";
             
         echo "</div>";
           
@@ -63,6 +68,8 @@
 
         }
     }
+
+
     
     $conn->close();
 ?>
