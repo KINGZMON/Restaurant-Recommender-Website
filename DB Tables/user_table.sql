@@ -43,7 +43,7 @@ INSERT INTO `user_table` (`id`, `Email`, `Username`, `Password`, `Time`) VALUES
 (1, 'admin@restogram.com', 'admin', '7c6a180b36896a0a8c02787eeafb0e4c', '2022-12-06 19:00:53.87'),
 (2, 'example1@gmail.com', 'John', '6cb75f652a9b52798eb6cf2201057c73', '2022-12-06 19:01:25.66'),
 (3, 'example2@gmail.com', 'Hank', '819b0643d6b89dc9b579fdfc9094f28e', '2022-12-06 19:01:39.83'),
-(4, 'example3@gmail.com', 'Merl', '34cc93ece0ba9e3f6f235d4af979b16c', '2022-12-06 19:01:55.99'),
+(4, 'example3@gmail.com', 'Merl', '34cc93ece0ba9e3f6f235d4af979b16c', '2022-12-06 19:01:55.99');
 
 --
 -- Indexes for dumped tables
