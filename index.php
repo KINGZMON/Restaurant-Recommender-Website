@@ -6,7 +6,7 @@
     
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--Bootsrap Grid System-->
+    <!--Main Styles Sheet-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--Fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -53,13 +53,7 @@ var hide = function(id) {
     </script>
 
     
-    <!--AJAX (User Panel)-->
-    <script>
-      // Get script
-      $(document).ready(function() {
-          $.getScript("/assets/js/user-panel.js");
-      });
-    </script>
+    
 
     <!--Showing Popup for random selection-->
     <script>
@@ -77,7 +71,7 @@ var hide = function(id) {
     </head>
 
 <!--After page and scripts fully loaded, call main user panel function-->
-<body onload="control_user_panel()">
+<body>
   
 <div id="container">
 
