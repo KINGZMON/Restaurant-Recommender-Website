@@ -51,7 +51,7 @@
             echo "<a id='restaurant-price-tag'>$actual_price</a><a class='is-hidden'>$price_txt" . $row['price_range'] . "</a>";
             echo "<a class='is-hidden'>" . $row['location'] . "</a>";
             echo "<i class='fa-solid fa-square-parking'></i>";
-            echo "<a href=" . $row2['link'] . "><i class='fa-solid fa-utensils'></i></a>";
+            echo "<a href=" . $row2['link'] . "' style='color: black;'><i class='fa-solid fa-utensils'></i></a>";
             
         echo "</div>";
           
