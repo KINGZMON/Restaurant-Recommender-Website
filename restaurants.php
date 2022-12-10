@@ -34,16 +34,6 @@
                 $actual_price = "$$$";
             }
 
-        //Resize Image
-        $resize = "0.5";
-        $rwidth =  150;
-        $rhight = 100;
-        $original = image 
-        $resized = imagecreatetruecolor( $rwidth, $rheight );
-        //$extension="?h=140&w=100"
-        //$resizeobj  = new resize($row['image']);
-        //$new = $resizeobg->resizeImage(140,100,'crop');
-        //$new_link =  $row['image'] + $extension;
 
             //echo "<a href='#'><img id='restaurant-image' src=". $row['image'] . "></a>";
             //echo "<a href='#'>" . $row['name'] . "</a>";
