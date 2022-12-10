@@ -7,6 +7,7 @@
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
+
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -17,7 +18,6 @@
 
     $sql2 = "SELECT * FROM menu_links ORDER BY 'DATE' ASC"; // ASC means you're ordering from newest to oldest
     $result2 = $conn->query($sql2);
-
 
     $price_txt = "price=";
     if ($result->num_rows > 0 && $result2->num_rows > 0) {
@@ -34,6 +34,17 @@
                 $actual_price = "$$$";
             }
 
+        //Resize Image
+        $resize = "0.5";
+        $rwidth =  150;
+        $rhight = 100;
+        $original = image 
+        $resized = imagecreatetruecolor( $rwidth, $rheight );
+        //$extension="?h=140&w=100"
+        //$resizeobj  = new resize($row['image']);
+        //$new = $resizeobg->resizeImage(140,100,'crop');
+        //$new_link =  $row['image'] + $extension;
+
             //echo "<a href='#'><img id='restaurant-image' src=". $row['image'] . "></a>";
             //echo "<a href='#'>" . $row['name'] . "</a>";
             //echo "<a href='#'>" . $row['cuisine'] . "</a>";
@@ -44,6 +55,7 @@
             //echo "<a href='#'>" . $row['number_tables'] . "</a>";
             //echo "<a href='#'>" . $row['contact'] . "</a>";
 
+        
         echo "<div id='Restaurant-Entry'>";
         echo "<a href='#'><img id='restaurant-image' src=". $row['image'] . "></a>";
         echo "<div id='res-heading-container'>";
@@ -68,8 +80,5 @@
 
         }
     }
-
-
-    
     $conn->close();
 ?>

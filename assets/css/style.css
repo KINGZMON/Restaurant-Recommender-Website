@@ -267,7 +267,8 @@ min-height: 600px;
   box-sizing: border-box;
 }
 #restaurant-image{
-  width:85%;
+  width:140px !important;
+  height: 100px !important;
 }
 #restaurant-heading{
   display:inline;
