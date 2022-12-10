@@ -19,6 +19,7 @@
     $sql2 = "SELECT * FROM menu_links ORDER BY 'DATE' ASC"; // ASC means you're ordering from newest to oldest
     $result2 = $conn->query($sql2);
 
+    $number_of_restaurants=0;
     $price_txt = "price=";
     if ($result->num_rows > 0 && $result2->num_rows > 0) {
         // output data of each row
@@ -34,7 +35,7 @@
                 $actual_price = "$$$";
             }
 
-
+           
             //echo "<a href='#'><img id='restaurant-image' src=". $row['image'] . "></a>";
             //echo "<a href='#'>" . $row['name'] . "</a>";
             //echo "<a href='#'>" . $row['cuisine'] . "</a>";
@@ -54,7 +55,8 @@
             echo "<a class='is-hidden'>" . $row['location'] . "</a>";
             echo "<i class='fa-solid fa-square-parking'></i>";
             echo "<a href=" . $row2['link'] . "' style='color: black;'><i class='fa-solid fa-utensils'></i></a>";
-            
+            $number_of_restaurants=++$number_of_restaurants;
+
         echo "</div>";
           
           echo "<a id='restaurant-cuisines'>" . $row['cuisine'] . "</a>";
@@ -64,11 +66,12 @@
             for ($i = 0; $i < $rating; $i++) {
                 echo "<i class='fa fa-star' aria-hidden='true'></i>";
             }
-
-          
+ 
+            
          echo "</span>";
+         echo "<h7 >$number_of_restaurants</h7>";
         echo "</div>";
-
+        
         }
     }
     $conn->close();
