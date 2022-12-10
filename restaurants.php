@@ -56,13 +56,14 @@
         echo "</div>";
           
           echo "<a id='restaurant-cuisines'>" . $row['cuisine'] . "</a>";
+          
+            echo "<span id='restaurant-stars' style='width:88%'>";
+            $rating = $row['rating'];
+            for ($i = 0; $i < $rating; $i++) {
+                echo "<i class='fa fa-star' aria-hidden='true'></i>";
+            }
 
-          echo "<span id='restaurant-stars' style='width:88%'>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
+          
          echo "</span>";
         echo "</div>";
 
