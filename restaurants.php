@@ -63,18 +63,19 @@
             echo "<a id='restaurant-price-tag'>$actual_price</a><a class='is-hidden'>$price_txt" . $row['price_range'] . "</a>";
             echo "<a class='is-hidden'>" . $row['location'] . "</a>";
             echo "<i class='fa-solid fa-square-parking'></i>";
-            echo "<a href=" . $row2['link'] . "><i class='fa-solid fa-utensils'></i></a>";
+            echo "<a href=" . $row2['link'] . "' style='color: black;'><i class='fa-solid fa-utensils'></i></a>";
             
         echo "</div>";
           
           echo "<a id='restaurant-cuisines'>" . $row['cuisine'] . "</a>";
+          
+            echo "<span id='restaurant-stars' style='width:88%'>";
+            $rating = $row['rating'];
+            for ($i = 0; $i < $rating; $i++) {
+                echo "<i class='fa fa-star' aria-hidden='true'></i>";
+            }
 
-          echo "<span id='restaurant-stars' style='width:88%'>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
-            echo "<i class='fa fa-star' aria-hidden='true'></i>";
+          
          echo "</span>";
         echo "</div>";
 
