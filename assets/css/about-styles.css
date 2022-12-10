@@ -33,9 +33,9 @@
 }
 .content h1{
     font-size: 30px;
-    color: #222;
+    font-weight: bold;
+    color: #0B7E2D;
     margin-top: 5px;
-
 }
 .content p{
     font-size: 18px;
@@ -48,9 +48,10 @@
     margin-left: 50px;
 
 }
-.content2 h1{
+.content2 h1,title h1{
     font-size: 30px;
-    color: #222;
+    font-weight: bold;
+    color: #0B7E2D;
     margin-top: 10px;
 
 }
@@ -58,21 +59,24 @@
     font-size: 18px;
     margin-top: 10px;
     line-height: 1.5;
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
-
 /* TEAM SECTION */
-
+#Team-Section h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #0B7E2D;
+    margin-top: 10px;
+}
 #Team-Entries{
     display:flex;
     flex-wrap: wrap;
-    
-    
     width: 55vw;
     background-color: rgb(245, 243, 243);
-    min-height: 250px;
+    min-height: 200px;
   }
+  
   
   #break-row{
     flex-basis: 100%;

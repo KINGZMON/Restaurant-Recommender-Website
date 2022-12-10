@@ -2,8 +2,6 @@
 
 <html lang="en">
   <head>
-    
-    
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--Main Styles Sheet-->
@@ -29,20 +27,17 @@
       </script>
     <!--Showing Popup-->
     <script>
-      
+    find_element = function(id) {
+      return document.getElementById(id);
+    }
 
-find_element = function(id) {
-  return document.getElementById(id);
-}
-
-var show = function(id) {
-	find_element(id).style.display ='block';
-}
-var hide = function(id) {
-	find_element(id).style.display ='none';
-}
+    var show = function(id) {
+      find_element(id).style.display ='block';
+    }
+    var hide = function(id) {
+      find_element(id).style.display ='none';
+    }
     </script>
-    
     <!--Filtered Search + Random Search + Side Filter Search-->
     <script>
       $(document).ready(function() {
@@ -51,9 +46,6 @@ var hide = function(id) {
           $.getScript("/assets/js/side-filters.js");
       });
     </script>
-
-    
-    
 
     <!--Showing Popup for random selection-->
     <script>
@@ -104,8 +96,8 @@ var hide = function(id) {
       <input type="text" name="r_city" id="r_city"><br><br>
       <legend><span class="legend_number">2</span>Preferences</legend>
       <p>Cuisine</p>
-         <input type="radio" id="Asian" name="radio_cuisine" value="Asian">
-         <label for="Asian">Asian</label><br>
+         <input type="radio" id="Mexican" name="radio_cuisine" value="Mexican">
+         <label for="Asian">Mexican</label><br>
          <input type="radio" id="Italian" name="radio_cuisine" value="Italian">
          <label for="Italian">Italian</label><br>
          <input type="radio" id="European" name="radio_cuisine" value="European">
@@ -131,8 +123,8 @@ var hide = function(id) {
       <div id="sidebar">
         <h4> Filter by</h4>
         <p>Cuisine</p>
-         <input type="radio" id="Asian" name="radio_cuisine_side" value="Asian">
-         <label for="Asian">Asian</label><br>
+         <input type="radio" id="Mexican" name="radio_cuisine_side" value="Mexican">
+         <label for="Asian">Mexican</label><br>
          <input type="radio" id="Italian" name="radio_cuisine_side" value="Italian">
          <label for="Italian">Italian</label><br>
          <input type="radio" id="European" name="radio_cuisine_side" value="European">
