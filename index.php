@@ -74,6 +74,9 @@
   <iframe src="https://my.atlistmaps.com/map/4291758d-0319-48d4-a8ce-895a913be823?share=true" 
     allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
+  <!--Number of Restaurants-->
+  <p id="restaurant-total"></p>
+
   <!--Search box-->
   <div class="container1">
     <div id="form-container">

@@ -1,8 +1,16 @@
 html{
   height:100%;
 }
-/*--------------User Panel--------------*/
 
+/*--------------Restaurant Total--------------*/
+#restaurant-total{
+  text-align:center;
+  font-style:italic;
+  margin:5px 0px;
+  color:#696969;
+  font-size:14px;
+}
+/*--------------User Panel--------------*/
 
 #user-panel{
   margin-left:20px;
