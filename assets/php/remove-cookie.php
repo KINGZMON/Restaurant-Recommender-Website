@@ -7,6 +7,12 @@ if (isset($_COOKIE['User_Cookie'])) {
     
 }
 
+
+// Destroy Session Data, Renew ID
+session_start();
+session_regenerate_id();
+session_destroy();
+
 // Redirect back to main page
 header("location: /index.php");
 
