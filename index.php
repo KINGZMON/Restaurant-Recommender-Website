@@ -6,6 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--Main Styles Sheet-->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <!--Description-->
+    <meta content="description" name="Main Page">
     <!--Fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Created date-->
@@ -13,7 +15,7 @@
     <!--Author-->
     <meta name="authors" content="Katrin Dianov, Povilas Jasvilis, Ali Jalilli, Turan Garashli, Muhammad Yousuf Farooq">
     <!--KeyWords-->
-    <meta name="keywords" content="FOOD , Easy recipes">
+    <meta name="keywords" content="FOOD , Restaurants, Recommended Restaurants">
     <!--Other-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
