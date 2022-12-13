@@ -76,6 +76,8 @@
 
   <!--Number of Restaurants-->
   <p id="restaurant-total"></p>
+  <!--Number of filtered restaurants-->
+  <p id="restaurant-filtered"></p>
 
   <!--Search box-->
   <div class="container1">
