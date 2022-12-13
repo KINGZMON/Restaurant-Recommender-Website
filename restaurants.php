@@ -1,5 +1,4 @@
 <?php
-
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -12,8 +11,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
-
     // 2 Tables (Restaurants + Menus)
     $sql = "SELECT * FROM restaurant_info ORDER BY 'DATE' ASC"; // ASC means you're ordering from newest to oldest
     $result = $conn->query($sql);

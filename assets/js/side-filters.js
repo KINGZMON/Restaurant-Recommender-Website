@@ -1,6 +1,6 @@
-
 // Finding all Restaurant Entries
 let restaurants_filters = document.querySelectorAll('#Restaurant-Entry')
+let total_restaurant = 0
     
     function filterSearch() {
 
@@ -23,7 +23,6 @@ let restaurants_filters = document.querySelectorAll('#Restaurant-Entry')
         // console.log(selected_cuisine); 
         // console.log(selected_price);
 
-
         // If Both Inputs Selected
         if(selected_cuisine != null && selected_price != null){
             for (var i = 0; i < restaurants_filters.length; i++) {
@@ -32,6 +31,7 @@ let restaurants_filters = document.querySelectorAll('#Restaurant-Entry')
                 // 2) Price
                 if(restaurants_filters[i].textContent.toLowerCase().includes(selected_cuisine.toLowerCase()) && restaurants_filters[i].textContent.toLowerCase().includes(selected_price.toLowerCase())) {
                     restaurants_filters[i].classList.remove("is-hidden");
+                    ++total_restaurant;
                 } else {
                   restaurants_filters[i].classList.add("is-hidden");
                 }
@@ -45,6 +45,7 @@ let restaurants_filters = document.querySelectorAll('#Restaurant-Entry')
                 // 1) Cusine
                 if(restaurants_filters[i].textContent.toLowerCase().includes(selected_cuisine.toLowerCase())) {
                     restaurants_filters[i].classList.remove("is-hidden");
+                    ++total_restaurant;
                 } else {
                   restaurants_filters[i].classList.add("is-hidden");
                 }
@@ -55,19 +56,15 @@ let restaurants_filters = document.querySelectorAll('#Restaurant-Entry')
         if(selected_cuisine === undefined && selected_price != null){
             for (var i = 0; i < restaurants_filters.length; i++) {
                 // Checking to match:
-                // 1) Cusine
+                // 1) Price
                 if(restaurants_filters[i].textContent.toLowerCase().includes(selected_price.toLowerCase())) {
                     restaurants_filters[i].classList.remove("is-hidden");
+                    ++total_restaurant;
                 } else {
                   restaurants_filters[i].classList.add("is-hidden");
                 }
             }
         }
-        
-        
-
-
-
-
-
+        window.alert("We found " + total_restaurant + " restaurants");
+        total_restaurant = 0;
     }
