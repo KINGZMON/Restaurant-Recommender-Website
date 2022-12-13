@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -95,3 +98,23 @@
     text-decoration:none;
     color:#212529;
   }
+  .my-div5{
+    position: relative;
+    left: 0px;
+    width:100%;
+    border-radius: 10px;
+    
+
+  }
+  #btn{
+    height: 50px;
+    width: 140px;
+    background-color: #0B7E2D;
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    color: white;
+    
+
+  }
+  
