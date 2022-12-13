@@ -11,9 +11,10 @@ html{
   font-size:14px;
 }
 
-#restautant-filtered{
-  text-align:center;
+#restaurant-filtered{
+  text-align:right;
   font-style:italic;
+  padding-right: 50px;
   margin:5px 0px;
   color:#696969;
   font-size:10px;

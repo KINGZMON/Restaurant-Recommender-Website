@@ -78,8 +78,6 @@
 
   <!--Number of Restaurants-->
   <p id="restaurant-total"></p>
-  <!--Number of filtered restaurants-->
-  <p id="restaurant-filtered"></p>
 
   <!--Search box-->
   <div class="container1">
@@ -90,6 +88,9 @@
       <a class="random-button" onclick="show('popup1')"><i class="fa-solid fa-dice"></i></a>
     </div>
   </div>
+
+   <!--Number of filtered restaurants-->
+   <p id="restaurant-filtered"></p>
 
   <!--Hidden Popup-->
   <div class="popup" id="popup1">
@@ -164,6 +165,4 @@
   <div id="footer"></div>
   </div>
 
-
-  
 </body>
